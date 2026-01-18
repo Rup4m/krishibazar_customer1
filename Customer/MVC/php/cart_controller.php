@@ -29,3 +29,4 @@ $cart_items = mysqli_query($conn, "SELECT cart.id as cart_id, products.*, cart.q
                                    FROM cart JOIN products ON cart.product_id = products.id 
                                    WHERE cart.user_id = '$user_id'");
 ?>
+
