@@ -54,3 +54,12 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
 .product-price { font-size: 20px; font-weight: 700; color: var(--primary-color); margin-bottom: 20px; }
 .cart-btn { width: 100%; border: 1.5px solid var(--primary-color); background: transparent; color: var(--primary-color); padding: 10px; border-radius: 6px; font-weight: 700; cursor: pointer; transition: 0.3s; }
 .cart-btn:hover { background: var(--primary-color); color: #fff; }
+
+
+
+.cart-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+.cart-table th { text-align: left; padding: 15px; border-bottom: 2px solid #eee; }
+.cart-table td { padding: 15px; border-bottom: 1px solid #eee; }
+.delete-btn { color: #e74c3c; text-decoration: none; font-weight: bold; }
+.cart-summary { margin-top: 30px; text-align: right; padding: 20px; background: #f9f9f9; border-radius: 8px; }
+.order-btn { background: var(--primary-color); color: white; padding: 12px 30px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; margin-top: 10px; }
