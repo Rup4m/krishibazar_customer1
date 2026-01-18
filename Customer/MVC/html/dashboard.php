@@ -72,8 +72,6 @@ include('../php/dashboard_controller.php');
         </section>
     </main>
 
-    <script>
-        function addToCart(id) { alert("Item added to cart!"); }
-    </script>
+    <script src="../js/cart.js"></script>
 </body>
 </html>
