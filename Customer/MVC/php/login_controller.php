@@ -10,17 +10,22 @@ if (isset($_POST['login_btn'])) {
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) === 1) {
-        // 1. SET SESSION
-        $_SESSION['username'] = $user;
+        // Fetch the user data to get the 'id'
+        $row = mysqli_fetch_assoc($result);
+
+        // 1. SET SESSIONS
+        $_SESSION['username'] = $row['username'];
+        $_SESSION['user_id'] = $row['id']; // This fixes the cart error
 
         // 2. SET COOKIE
-        setcookie("last_user", $user, time() + 3600, "/");
+        setcookie("last_user", $row['username'], time() + 3600, "/");
 
-        // 3. REDIRECT TO DASHBOARD (The critical step)
+        // 3. REDIRECT TO DASHBOARD
         header("Location: ../html/dashboard.php");
-        exit(); // Always call exit after header redirect
+        exit(); 
     } else {
         echo "<script>alert('Invalid Username or Password'); window.location='../html/login.php';</script>";
     }
 }
 ?>
+

@@ -46,7 +46,11 @@ include('../php/dashboard_controller.php');
             <div class="category-flex">
                 <?php while($cat = mysqli_fetch_assoc($categories)): ?>
                     <a href="category.php?id=<?php echo $cat['id']; ?>" class="category-item">
-                        <div class="circle-box"></div>
+                        <div class="circle-box">
+                            <img src="../images/<?php echo strtolower($cat['category_name']); ?>.jpg" 
+                                 alt="<?php echo $cat['category_name']; ?>" 
+                                 style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;">
+                        </div>
                         <span><?php echo $cat['category_name']; ?></span>
                     </a>
                 <?php endwhile; ?>
@@ -60,7 +64,11 @@ include('../php/dashboard_controller.php');
             <div class="product-grid">
                 <?php while($row = mysqli_fetch_assoc($products)): ?>
                     <div class="product-block">
-                        <div class="product-img-box"></div>
+                        <div class="product-img-box">
+                            <img src="../images/<?php echo $row['product_name']; ?>.jpg" 
+                                 alt="<?php echo $row['product_name']; ?>" 
+                                 style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        </div>
                         <div class="product-details">
                             <h4 class="product-name"><?php echo $row['product_name']; ?></h4>
                             <p class="product-price">৳ <?php echo $row['price']; ?></p>
@@ -72,8 +80,6 @@ include('../php/dashboard_controller.php');
         </section>
     </main>
 
-    <script>
-        function addToCart(id) { alert("Item added to cart!"); }
-    </script>
+    <script src="../js/cart.js"></script>
 </body>
 </html>
