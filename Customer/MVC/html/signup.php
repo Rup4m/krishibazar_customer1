@@ -4,7 +4,7 @@
     <title>Krishibazar - Signup</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="login-page">
     <div class="form-container">
         <form action="../php/signup_controller.php" method="POST">
             <h2>Create Account</h2>
