@@ -28,3 +28,24 @@ $result = mysqli_query($conn, $query);
             </nav>
         </div>
     </header>
+
+     <main class="checkout-main-container">
+        <div class="invoice-wrapper">
+            <div class="invoice-header">
+                <span class="logo"><i class="fa-solid fa-clock-rotate-left"></i> Your Order History</span>
+                <p>Track and manage your recent purchases</p>
+            </div>
+
+ <?php if(mysqli_num_rows($result) > 0): ?>
+                <div style="overflow-x:auto;">
+                    <table class="cart-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Date</th>
+                                <th>Total Amount</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
