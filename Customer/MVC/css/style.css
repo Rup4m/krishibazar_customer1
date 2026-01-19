@@ -2,3 +2,236 @@ body { font-family: sans-serif; background: #f0f2f5; display: flex; justify-cont
 .login-container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); width: 320px; }
 input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
 button { width: 100%; padding: 10px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; }
+
+
+body.login-page {
+    background: 
+                url('../images/signup.jpg') no-repeat center center fixed; 
+    background-size: cover; 
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+body.signup-page {
+    background: 
+                url('../images/signup.jpg') no-repeat center center fixed; 
+    background-size: cover; 
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+:root {
+    --primary-color: #2d8a39;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --bg-light: #f9fafb;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-dark); }
+
+/* Full Width Navbar */
+.header-main { background: #fff; border-bottom: 1px solid #e5e7eb; position: fixed; top: 0; width: 100%; z-index: 1000; height: 70px; }
+.header-container { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 100%; padding: 0 40px; }
+.logo { font-size: 24px; font-weight: 800; color: var(--primary-color); }
+
+.search-area form { display: flex; background: #f3f4f6; border-radius: 8px; overflow: hidden; border: 1px solid #d1d5db; }
+.search-area input { border: none; background: transparent; padding: 10px 20px; width: 400px; outline: none; }
+.search-area button { background: var(--primary-color); color: white; border: none; padding: 0 20px; cursor: pointer; font-weight: 600; }
+
+.header-nav a { text-decoration: none; color: var(--text-dark); margin-left: 30px; font-weight: 600; font-size: 15px; }
+.header-nav a.active { color: var(--primary-color); }
+
+/* Main Content Area */
+.page-content { max-width: 1400px; margin: 100px auto 40px; padding: 0 40px; }
+
+.block-section { background: #fff; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e5e7eb; }
+
+/* Banner Block */
+.banner-block { background: linear-gradient(135deg, #2d8a39 0%, #1e5c26 100%); color: white; min-height: 200px; display: flex; align-items: center; }
+.banner-text h1 { font-size: 36px; margin-bottom: 10px; }
+
+/* Section Titles */
+.section-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+.view-all { color: var(--primary-color); text-decoration: none; font-weight: bold; }
+
+/* Category Circles */
+.category-flex { display: flex; gap: 40px; overflow-x: auto; padding-bottom: 10px; }
+.category-item { text-decoration: none; color: inherit; text-align: center; }
+.circle-box { width: 100px; height: 100px; background: #f3f4f6; border-radius: 50%; margin-bottom: 12px; border: 2px solid transparent; transition: 0.3s; }
+.category-item:hover .circle-box { border-color: var(--primary-color); transform: scale(1.05); }
+
+/* Product Grid */
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 25px; }
+.product-block { border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; transition: 0.3s; background: #fff; }
+.product-block:hover { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+.product-img-box { height: 200px; background: #f3f4f6; }
+.product-details { padding: 20px; text-align: center; }
+.product-name { font-size: 18px; margin-bottom: 8px; }
+.product-price { font-size: 20px; font-weight: 700; color: var(--primary-color); margin-bottom: 20px; }
+.cart-btn { width: 100%; border: 1.5px solid var(--primary-color); background: transparent; color: var(--primary-color); padding: 10px; border-radius: 6px; font-weight: 700; cursor: pointer; transition: 0.3s; }
+.cart-btn:hover { background: var(--primary-color); color: #fff; }
+
+
+
+.cart-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+.cart-table th { text-align: left; padding: 15px; border-bottom: 2px solid #eee; }
+.cart-table td { padding: 15px; border-bottom: 1px solid #eee; }
+.delete-btn { color: #e74c3c; text-decoration: none; font-weight: bold; }
+.cart-summary { margin-top: 30px; text-align: right; padding: 20px; background: #f9f9f9; border-radius: 8px; }
+.order-btn { background: var(--primary-color); color: white; padding: 12px 30px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; margin-top: 10px; }
+
+/* --- Global Styles --- */
+:root {
+    --primary-color: #2d8a39; /* Krishibazar Green */
+    --secondary-color: #f4f4f4;
+    --text-dark: #333;
+    --shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+body.checkout-page {
+    background-color: #f9f9f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+/* --- Professional Navbar --- */
+.header-main {
+    background: white;
+    box-shadow: var(--shadow);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.header-nav a.active, .header-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Checkout Layout --- */
+.checkout-main-container {
+    max-width: 1100px;
+    margin: 120px auto 50px;
+    padding: 20px;
+}
+
+.checkout-flex-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two column layout */
+    gap: 30px;
+}
+
+/* --- Left Side: Invoice Receipt Card --- */
+.invoice-wrapper {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid #eee;
+}
+
+.invoice-header {
+    border-bottom: 2px dashed #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.invoice-header .logo {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.invoice-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.invoice-footer {
+    margin-top: 20px;
+    padding-top: 15px;
+}
+
+.grand-total {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+/* --- Right Side: Delivery Form --- */
+.delivery-details-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box; /* Important for width */
+}
+
+.place-order-btn {
+    width: 100%;
+    background: var(--primary-color);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.place-order-btn:hover {
+    background: #246e2d;
+    transform: translateY(-2px);
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    .checkout-flex-layout {
+        grid-template-columns: 1fr;
+    }
+}

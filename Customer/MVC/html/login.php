@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head><title>Login</title><link rel="stylesheet" href="../css/style.css"></head>
-<body>
-    <div class="login-box">
+
+<body class="login-page">
+       <div class="login-box">
         <form action="../php/login_controller.php" method="POST">
             <h2>Login</h2>
             <input type="text" name="username" placeholder="Username" required>
