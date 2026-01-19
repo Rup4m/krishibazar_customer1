@@ -49,3 +49,40 @@ $result = mysqli_query($conn, $query);
                             </tr>
                         </thead>
                         <tbody>
+                              <?php while($row = mysqli_fetch_assoc($result)): ?>
+                            <tr id="order-row-<?php echo $row['id']; ?>">
+                                <td><strong>#<?php echo $row['id']; ?></strong></td>
+                                <td><?php echo date('M d, Y', strtotime($row['order_date'])); ?></td>
+                                <td class="grand-total" style="font-size: 1rem;">৳ <?php echo number_format($row['total_amount'], 2); ?></td>
+                                <td>
+                                    <span class="status-badge <?php echo strtolower($row['status']); ?>">
+                                        <?php echo $row['status']; ?>
+                                    </span>
+                                </td>
+                                <td>
+                                    <?php if($row['status'] == 'Pending'): ?>
+                                        <button class="delete-btn" onclick="cancelOrder(<?php echo $row['id']; ?>)">
+                                            <i class="fa-solid fa-xmark"></i> Cancel
+                                        </button>
+                                    <?php else: ?>
+                                        <span style="color: #999; font-size: 0.85rem;">Completed</span>
+                                    <?php endif; ?>
+                                </td>
+                            </tr>
+                            <?php endwhile; ?>
+                        </tbody>
+                    </table>
+                </div>
+            <?php else: ?>
+                <div style="text-align: center; padding: 40px;">
+                    <i class="fa-solid fa-basket-shopping" style="font-size: 3rem; color: #ddd;"></i>
+                    <p style="margin-top: 15px;">No orders found yet.</p>
+                    <a href="dashboard.php" class="place-order-btn" style="text-decoration: none; padding: 10px 20px;">Start Shopping</a>
+                </div>
+            <?php endif; ?>
+        </div>
+    </main>
+
+    <script src="../js/order_actions.js"></script>
+</body>
+</html>
