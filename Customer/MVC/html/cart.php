@@ -51,7 +51,7 @@
             
             <div class="cart-summary">
                 <h3>Total: ৳ <?php echo $grand_total; ?></h3>
-                <button class="order-btn">Confirm Order</button>
+              <a href="checkout.php" class="order-btn" style="text-decoration: none; display: inline-block; text-align: center;">Confirm Order</a>
             </div>
         </div>
     </main>
