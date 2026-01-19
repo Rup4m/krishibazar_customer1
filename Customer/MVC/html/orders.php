@@ -7,3 +7,24 @@ $u_id = $_SESSION['user_id'];
 $query = "SELECT * FROM orders WHERE user_id = '$u_id' ORDER BY order_date DESC";
 $result = mysqli_query($conn, $query);
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History | Krishibazar</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="checkout-page"> <header class="header-main">
+        <div class="header-container">
+            <div class="logo">Krishibazar</div>
+            <nav class="header-nav">
+                <a href="dashboard.php">Home</a>
+                <a href="cart.php">Cart</a>
+                <a href="orders.php" class="active">Orders</a>
+                <a href="profile.php">Me</a>
+            </nav>
+        </div>
+    </header>
