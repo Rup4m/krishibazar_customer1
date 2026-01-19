@@ -1,6 +1,8 @@
 <?php
 require_once('../db/database.php');
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 $user_id = $_SESSION['user_id']; // Ensure this was set during login
 
